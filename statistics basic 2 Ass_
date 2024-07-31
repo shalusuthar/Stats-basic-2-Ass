@@ -1,0 +1,758 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "eee6e801-d3f6-4ca1-a11b-12a1a30fe282",
+   "metadata": {},
+   "source": [
+    "Q1. What are the three measures of central tendency?\n",
+    "\n",
+    "Ans. Mean \n",
+    "\n",
+    "     Median\n",
+    "     \n",
+    "     Mode "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ca40019a-95b6-4cbe-8530-35435cd708a8",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2e1065f3-6747-482e-93ab-b7dedcfd85ed",
+   "metadata": {},
+   "source": [
+    "Q2. What is the difference between the mean, median, and mode? How are they used to measure the\n",
+    "central tendency of a dataset?\n",
+    "\n",
+    "The central tendency measure is defined as the number used to represent the center or middle of a set of data values. The three commonly used measures of central tendency are the mean, median, and mode.\n",
+    "\n",
+    "Mean\n",
+    "\n",
+    "The mean is the arithmetic average, and it is probably the measure of central tendency that you are most familiar. Calculating the mean is very simple. You just add up all of the values and divide by the number of observations in your dataset.\n",
+    "\n",
+    "Median\n",
+    "\n",
+    "The median is the middle value. It is the value that splits the dataset in half, making it a natural measure of central tendency.\n",
+    "\n",
+    "To find the median, order your data from smallest to largest, and then find the data point that has an equal number of values above it and below it. The method for locating the median varies slightly depending on whether your dataset has an even or odd number of values.\n",
+    "\n",
+    "Mode\n",
+    "\n",
+    "The mode is the value that occurs the most frequently in your data set, making it a different type of measure of central tendency than the mean or median.\n",
+    "\n",
+    "​"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "57c57ae8-1d53-454f-a002-20e30a57cb53",
+   "metadata": {},
+   "source": [
+    "Q3. Measure the three measures of central tendency for the given height data:\n",
+    "\n",
+    " [178,177,176,177,178.2,178,175,179,180,175,178.9,176.2,177,172.5,178,176.5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "d85c1595-da32-433a-87e4-a117889a128b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "ff2eee31-8beb-4879-8c78-d6f37a8636c9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = [178,177,176,177,178.2,178,175,179,180,175,178.9,176.2,177,172.5,178,176.5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "3358a744-f421-4084-a363-92029d5513eb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "177.01875"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.mean(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "e00d4558-7362-4e30-83f9-f16ca8ff6c31",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "177.0"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.median(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "f00b316c-f894-48cb-8ce1-e75a315ae9c3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from scipy import stats "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "a721486f-1d6a-4c8a-8e3f-4543c00e6334",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/tmp/ipykernel_84/4235401754.py:1: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.\n",
+      "  stats.mode(df)\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "ModeResult(mode=array([177.]), count=array([3]))"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "stats.mode(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4159507d-8ee8-40ac-96d8-1f0ac7a05064",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ab6907fe-9f44-4085-a060-94fb1a0c5da1",
+   "metadata": {},
+   "source": [
+    "Q4. Find the standard deviation for the given data:\n",
+    "\n",
+    "[178,177,176,177,178.2,178,175,179,180,175,178.9,176.2,177,172.5,178,176.5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "4e36a843-6ff9-4bf9-984d-731952db12e9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df1 = [178,177,176,177,178.2,178,175,179,180,175,178.9,176.2,177,172.5,178,176.5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "e86d47c9-ae18-4e0e-9c83-6e5d65700286",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1.7885814036548633"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.std(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "05c79471-6657-427d-83f3-06554df8f99c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e869086a-b880-425f-bf72-abbab8e7d7df",
+   "metadata": {},
+   "source": [
+    "Q5. How are measures of dispersion such as range, variance, and standard deviation used to describe\n",
+    "the spread of a dataset? Provide an example.\n",
+    "\n",
+    "VARIANCE \n",
+    "\n",
+    "The variance of the data is given by measuring the distance of the observed values from the mean of the distribution. Here we are not concerned with the sign of the distance of the point, we are more interested in the magnitude. So, we take squares of the distance from the mean. Let’s say we have x1, x2, x3 …. xn as n observations and \\bar{x} be the mean.\n",
+    "\n",
+    "STANDARD DEVIATION\n",
+    "\n",
+    "The squareroot of the variance iscalled the standard deviation.\n",
+    "\n",
+    "\n",
+    "\n",
+    "Let’s say we have the following data, \n",
+    "\n",
+    "-4\t-2\t0\t-2\t6\t4\t6\t0\t-6\t4\n",
+    "\n",
+    "\n",
+    "Variance\n",
+    "\n",
+    "To find the variance, we first need to find the mean, \n",
+    "\n",
+    "Mean = \\frac{( -4  + -2 + 0 + -2 + 6 + 4 + 6 + 0  - 6 + 4)}{10}\n",
+    "\n",
+    "          = \\frac{6}{10}\n",
+    "\n",
+    "          = 0.6\n",
+    "\n",
+    "We know the formula for Variance, \n",
+    "\n",
+    "Variance =  \\frac{\\sum^{n}_{0}(x_i - \\bar{x})^2}{n}\n",
+    "\n",
+    "                = \\frac{(x_1 - \\bar{x})^2 + (x_2 - \\bar{x})^2 + (x_3 - \\bar{x})^2 .... (x_n - \\bar{x})^2}{n}\n",
+    "\n",
+    "                = \\frac{(-4 - 0.6)^2 + (-2 - 0.6)^2 + (0 - 0.6)^2 .... }{10}\n",
+    "\n",
+    "                = 17.82 \n",
+    "                \n",
+    "\n",
+    "Standard Deviation\n",
+    "\n",
+    "\\sigma = \\sqrt{\\frac{\\sum^{n}_{0}(x_i - \\bar{x})^2}{n}}\n",
+    "\n",
+    "⇒ \\sigma = \\sqrt{17.82}\n",
+    "\n",
+    "⇒ \\sigma = 4.22\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "RANGE \n",
+    "\n",
+    "The range is the amount of dispersion of data that indicates the difference between the largest and the smallest numbers in the list. The difference of given numbers is defined as the subtraction of the smallest number from the largest number.\n",
+    "\n",
+    "10, 14, 8, 10, 15, 4, 7\n",
+    "\n",
+    "Minimum value in data = 7 \n",
+    "\n",
+    "Maximum Value in the data = 15\n",
+    "\n",
+    "Range = Maximum Value in the data – Minimum value in the data  \n",
+    "\n",
+    "           = 15 – 7 \n",
+    "\n",
+    "           = 8 \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9df21683-b943-4070-a55a-1461f5ce6dbd",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "22b81daa-57be-464f-a643-0685f7da9d8c",
+   "metadata": {},
+   "source": [
+    "Q6. What is a Venn diagram?\n",
+    "\n",
+    "A Venn diagram is an illustration that uses overlapping circles to show the commonalities and differences between things or groups of things."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "30490d04-6e04-40eb-a4b3-ed6b29e1eca6",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9146763d-81ee-4f8f-8968-7b079ac28b1b",
+   "metadata": {},
+   "source": [
+    "Q7. For the two given sets A = (2,3,4,5,6,7) & B = (0,2,6,8,10). Find:\n",
+    "\n",
+    "(i) \tA intersection B : (2,6)\n",
+    "\n",
+    "(ii)\tA ⋃ B : (0,2,3,4,5,6,7,8,10)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b6b1b673-c0a1-4728-af53-fc4791dccabc",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e2ad8e20-a372-4255-af5a-f18db7ab3b1d",
+   "metadata": {},
+   "source": [
+    "Q8. What do you understand about skewness in data?\n",
+    "\n",
+    "Skewness is the degree of asymmetry observed in a probability distribution. When data points on a bell curve are not distributed symmetrically to the left and right sides of the median, the bell curve is skewed. Distributions can be positive and right-skewed, or negative and left-skewed.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d971fe78-ddbe-41a5-81aa-73591fd84a20",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0372dbb2-4e9c-4098-ae8b-8fd7cba70fea",
+   "metadata": {},
+   "source": [
+    "Q9. If a data is right skewed then what will be the position of median with respect to mean?\n",
+    "\n",
+    " If the distribution of data is skewed to the right, the mode is often less than the median, which is less than the mean."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a16b7235-7b28-44ed-9142-bf4d304e636b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "060210ba-9ffc-4643-8cad-fb917dbdddf7",
+   "metadata": {},
+   "source": [
+    "Q10. Explain the difference between covariance and correlation. How are these measures used in\n",
+    "statistical analysis?\n",
+    "\n",
+    "Both covariance and correlation measure the relationship and the dependency between two variables. Covariance indicates the direction of the linear relationship between variables while correlation measures both the strength and direction of the linear relationship between two variables.\n",
+    "\n",
+    "Covariance reveals how two variables change together while correlation determines how closely two variables are related to each other. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "abc6be52-e1a1-4422-a468-14ac2d76a788",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ebd51ebe-4a3d-4105-90d3-3287f109fdcd",
+   "metadata": {},
+   "source": [
+    "Q11. What is the formula for calculating the sample mean? Provide an example calculation for a\n",
+    "dataset.\n",
+    "\n",
+    "Mean =  sum of all the observations/total number of observations \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "f03f7f14-3623-4442-acf9-50840ad72d1c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import seaborn as sns "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "1d615cf4-2aef-4eaf-be21-eb1194e91521",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "tips = sns.load_dataset('tips')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "cdaa65cf-36b8-474b-ac37-8d8a229e9eca",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>total_bill</th>\n",
+       "      <th>tip</th>\n",
+       "      <th>sex</th>\n",
+       "      <th>smoker</th>\n",
+       "      <th>day</th>\n",
+       "      <th>time</th>\n",
+       "      <th>size</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>16.99</td>\n",
+       "      <td>1.01</td>\n",
+       "      <td>Female</td>\n",
+       "      <td>No</td>\n",
+       "      <td>Sun</td>\n",
+       "      <td>Dinner</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>10.34</td>\n",
+       "      <td>1.66</td>\n",
+       "      <td>Male</td>\n",
+       "      <td>No</td>\n",
+       "      <td>Sun</td>\n",
+       "      <td>Dinner</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>21.01</td>\n",
+       "      <td>3.50</td>\n",
+       "      <td>Male</td>\n",
+       "      <td>No</td>\n",
+       "      <td>Sun</td>\n",
+       "      <td>Dinner</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>23.68</td>\n",
+       "      <td>3.31</td>\n",
+       "      <td>Male</td>\n",
+       "      <td>No</td>\n",
+       "      <td>Sun</td>\n",
+       "      <td>Dinner</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>24.59</td>\n",
+       "      <td>3.61</td>\n",
+       "      <td>Female</td>\n",
+       "      <td>No</td>\n",
+       "      <td>Sun</td>\n",
+       "      <td>Dinner</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   total_bill   tip     sex smoker  day    time  size\n",
+       "0       16.99  1.01  Female     No  Sun  Dinner     2\n",
+       "1       10.34  1.66    Male     No  Sun  Dinner     3\n",
+       "2       21.01  3.50    Male     No  Sun  Dinner     3\n",
+       "3       23.68  3.31    Male     No  Sun  Dinner     2\n",
+       "4       24.59  3.61  Female     No  Sun  Dinner     4"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "tips.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "d14ec1bd-d0c4-47c9-b7fc-60958e1c4975",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "696238fd-0115-4e3e-b201-e7baa57ad3b3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/opt/conda/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3430: FutureWarning: In a future version, DataFrame.mean(axis=None) will return a scalar mean over the entire DataFrame. To retain the old behavior, use 'frame.mean(axis=0)' or just 'frame.mean()'\n",
+      "  return mean(axis=axis, dtype=dtype, out=out, **kwargs)\n",
+      "/opt/conda/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3430: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.\n",
+      "  return mean(axis=axis, dtype=dtype, out=out, **kwargs)\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "total_bill    19.785943\n",
+       "tip            2.998279\n",
+       "size           2.569672\n",
+       "dtype: float64"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.mean(tips)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "220948ec-96b8-4232-91dd-1b981859f088",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f11cd532-6b61-49a1-8f61-514ae4a4640d",
+   "metadata": {},
+   "source": [
+    "Q12. For a normal distribution data what is the relationship between its measure of central tendency?\n",
+    "\n",
+    "Ans. for normal distribution all the mean , mode and meadian are equal."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "55e9d127-8a1b-4ba8-9fa0-42bb2631c2a0",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1e8356fd-ef7b-41af-8c18-7b3f766bc361",
+   "metadata": {},
+   "source": [
+    "Q13. How is covariance different from correlation?\n",
+    "\n",
+    "Both covariance and correlation measure the relationship and the dependency between two variables. Covariance indicates the direction of the linear relationship between variables while correlation measures both the strength and direction of the linear relationship between two variables.\n",
+    "\n",
+    "Covariance reveals how two variables change together while correlation determines how closely two variables are related to each other."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ceff363-1f0e-4814-bbed-f88eff4928b4",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8e0c6da2-436a-4a95-889b-6f2e737097fe",
+   "metadata": {},
+   "source": [
+    "Q14. How do outliers affect measures of central tendency and dispersion? Provide an example."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "572f1fbf-5440-4dce-8f04-7908d384794f",
+   "metadata": {},
+   "source": [
+    "Mean: Outliers can pull the mean towards their extreme values. If there are outliers with large values, the mean can be inflated, while outliers with small values can lower the mean. Median: The median is less affected by outliers compared to the mean."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "c4c27993-3891-4f02-8507-0c17f32a3d8e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df3 = [1,2,3,4,5]\n",
+    "df4 = [1,2,3,4,5,100]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "1dc949ae-8b3d-448e-a528-e8e63a207521",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "82a280a6-9981-4812-99d9-5e01126944e8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3.0"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.mean(df3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "95e9908f-5358-4e28-8a25-9ad6ecc0c339",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "19.166666666666668"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.mean(df4)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "f04b2c47-a58c-4a75-b96e-9049114e5cab",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3.0"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.median(df3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "06f1086d-715a-49c6-a0b2-3bf5c1fa0381",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "np.meadian"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
